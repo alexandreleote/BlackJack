@@ -1,18 +1,34 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+
+
         <link rel="stylesheet" href="index.css">
+        <title>Document</title>
     </head>
     <body>
-        <!-- Affichage de ce qui se passe à l'écran -->
-        <h1>BlackJack</h1>
-        <p id="message-el">Want to play a round?</p>
-        <p id="cards-el">Cards:</p>
-        <p id="sum-el">Sum:</p>
-        <!-- Boutons pour jouer lançant les fonctions -->
-        <button onclick="startGame()">START GAME</button>
-        <button onclick="newCard()">NEW CARD</button>
-        <!-- Informations sur le joueur -->
-        <p id="player-el"></p>
-        <script src="index.js"></script>
+        <div id="main-container">
+            <div id="game-container">
+                <!-- Affichage de ce qui se passe à l'écran -->
+                <h1>BlackJack</h1>
+                <p id="message-el">Want to play a round?</p>
+                <p id="cards-el">Cards:</p>
+                <p id="sum-el">Sum:</p>
+                <!-- Boutons pour jouer lançant les fonctions -->
+                <div id="btn-container">
+                    <button class="game-btn" id="start-game">START GAME</button>
+                    <button class="game-btn" id="new-card">NEW CARD</button>
+                </div>
+                <!-- Informations sur le joueur -->
+                <p id="player-el"></p>
+            </div>
+            <div class="info-el"></div>
+        </div>
+        <script type="module" src="index.js"></script>
     </body>
 </html>

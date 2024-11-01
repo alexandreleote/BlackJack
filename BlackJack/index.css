@@ -1,10 +1,23 @@
-/* 
-CORPS DU SITE
-*/
+/* ROOT */
+
+:root {
+    /* colors */
+    --lightgold : rgb(250, 212, 0);
+    --darkgold : rgb(224, 155, 6);
+    --lightgreen : rgb(3, 165, 76);
+    --darkgreen: rgb(1, 111, 50);
+
+    /* fonts */
+    --main-font : 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --honk-font : 'Honk' ;
+}
+
+
+/* OVERALL PARAMETERS */
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-image: url('/ressources/table.jpeg');
+    font-family: var(--main-font);
+    background-color: var(--darkgreen);
     background-size: cover;
     text-align: center;
     color: white;
@@ -12,27 +25,60 @@ body {
 }
 
 h1 {
-    color :goldenrod
+    font-family: var(--honk-font);
+    font-size: 4em;
 }
 
 #message-el {
     font-style: italic;
 }
 
-/* 
-BOUTONS DE JEU
-*/
+#info-el {
+    background-color: rgba(0, 0, 0, 0.3);
+}
 
-button {
-    color: #016f32;
+
+/* CONTAINERS */
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-container {
+    width: 80vw;
+    border-radius: 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+
+/* BUTTONS */
+
+.game-btn {
+    color: var(--darkgreen);
     width: 150px;
-    background: goldenrod;
+    background: var(--darkgold);
     padding-top: 5px;
     padding-bottom: 5px;
     font-weight: bold;
     border: none;
-    border-radius: 2px;
+    border-radius: 2rem;
     margin-bottom: 2px;
     margin-top: 2px;
+    cursor: pointer;
+    
+}
+
+.game-btn:hover {
+    background-color: var(--lightgold);
+    color: var(--lightgreen);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.game-btn:active {
+    color: var(--lightgold);
+    background-color: var(--lightgreen);
     
 }
