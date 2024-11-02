@@ -1,6 +1,6 @@
 let player = {
     name: "Alexandre",
-    chips: 150
+    chips: 20
 }
 
 export default player

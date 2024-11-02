@@ -1,5 +1,9 @@
 import player from './data.js'
 
+// Loading the stats of current game session
+let gameProgress = JSON.parse(localStorage.getItem('gameProgress') || 0)
+player.chips = gameProgress
+
 // Variables needed for our game
 let cards = [] 
 let sum = 0
@@ -15,8 +19,8 @@ let playerEl = document.getElementById("player-el")
 let startNewGame = document.querySelector('#start-game')
 let drawNewCard = document.querySelector('#new-card')
 
-startNewGame.addEventListener('click', (startGame))
-drawNewCard.addEventListener('click', (newCard))
+startNewGame.addEventListener('click', startGame)
+drawNewCard.addEventListener('click', newCard)
 
 playerEl.textContent = player.name + ": " + player.chips + "€"
 
@@ -49,8 +53,8 @@ function startGame () {
         sum = firstCard + secondCard
         renderGame() // We render the game
     } else {
-        infoEl = "Sorry, it seems you've run out of chips !"
-        alert(infoEl)
+        infoEl.textContent = "Sorry, it seems you've run out of chips !"
+
     }
 }
 
@@ -88,6 +92,10 @@ function renderGame() {
         console.log("Jackpot : " + hasJackpot)
     }
     messageEl.textContent = message
+    gameProgress = player.chips
+    
+    // Save game progress in localStorage
+    localStorage.setItem('gameProgress', JSON.stringify(gameProgress))
 }
 
 // If we are still in the game and did not hit BlackJack, then we can draw an extra card
@@ -98,8 +106,8 @@ function newCard() {
         cards.push(card)
         renderGame()
     } else if (isAlive === true && hasBlackJack === true) {
-        infoEl = "Sorry, you've already won !"
-        alert(infoEl)
+        infoEl.textContent = "Sorry, you've already won !"
+        alert(infoEl.textContent)
     }
 }
 
