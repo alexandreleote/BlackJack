@@ -66,7 +66,7 @@ Concepts :
 ## 🚀 Structure du projet
 
 ```
-blackjack-game/
+Blackjack/
 │
 ├── README.md
 │
